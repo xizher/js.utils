@@ -1,3 +1,5 @@
+export * from './crypto/crypto'
+
 /**
  * 对象深拷贝
  * @param {Object} obj Javascript对象
