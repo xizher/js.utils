@@ -22,6 +22,16 @@ export declare function getRootPath (): String
  */
 export declare function randomRange (minValue: Number, maxValue: Number): Number
 
+/**
+ * 加密算法
+ * @param str 需要加密的字符串
+ * @returns 加密后的字符串
+ */
 export declare function enCrypto (str: string): string
 
+/**
+ * 解密算法
+ * @param str 需要解密的字符串
+ * @returns 解密后的字符串
+ */
 export declare function deCrypto (str: string): string
