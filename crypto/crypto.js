@@ -1,4 +1,4 @@
-import CryptoJS from '../libs/crypto-js.min.js'
+import CryptoJS from 'crypto-js'
 // <script src="~/crypto-js.min.js"></script> // => CryptoJS
 
 // import { STRING_CRYPTO_KEY, STRING_CRYPTO_IV } from '@/config/key.conf'
