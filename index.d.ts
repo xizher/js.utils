@@ -35,3 +35,11 @@ export declare function enCrypto (str: string): string
  * @returns 解密后的字符串
  */
 export declare function deCrypto (str: string): string
+
+/**
+ * Crypto加密解密配置
+ * @param options 配置信息
+ */
+export declare function setCryptoConfig (options: {
+  key: string, iv: string
+}) : void
