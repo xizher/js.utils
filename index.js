@@ -1,6 +1,8 @@
 export * from './crypto/crypto'
 export * from './cookie/cookie'
 export * from './regular/regular'
+export * from './storage/storage'
+export * from './http/http'
 
 /**
  * 对象深拷贝
@@ -41,4 +43,50 @@ export function getRootPath () {
  */
 export function randomRange (minValue, maxValue) {
   return minValue + Math.round(Math.random() * (maxValue - minValue))
+}
+
+export function getGeoLocation (options = {}) {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(success, error, Object.assign({
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    }, options))
+    function success (position) {
+      const { longitude, latitude } = position.coords
+      resolve({
+        lon: longitude,
+        lat: latitude,
+        detial: position
+      })
+    }
+    function error (err) {
+      reject(err)
+    }
+  })
+}
+
+export function watchGeoLocation (success, error, options) {
+  const watchId = navigator.geolocation.watchPosition(position => {
+    if (typeof success === 'function') {
+      success({
+        lon: position.coords.longitude,
+        lat: position.coords.latitude,
+        detail: position
+      })
+    }
+  }, err => {
+    if (typeof error === 'function') {
+      error(err)
+    }
+  }, Object.assign({
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  }, options))
+  return {
+    remove () {
+      navigator.geolocation.clearWatch(watchId)
+    }
+  }
 }
