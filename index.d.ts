@@ -65,3 +65,10 @@ export declare function delCookie (key: string) : void
  * @param key cookie键
  */
 export declare function getCookie (key) : string
+
+export declare class RegExpHelper {
+  static '非负整数' (val: any) : boolean
+  static '正整数' (val: any) : boolean
+  static 'email' (val: any) : boolean
+  static 'url' (val: any) : boolean
+}
