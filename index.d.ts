@@ -43,3 +43,25 @@ export declare function deCrypto (str: string): string
 export declare function setCryptoConfig (options: {
   key: string, iv: string
 }) : void
+
+/**
+ * 设置cookie
+ * @param key cookid键
+ * @param value cookie值
+ * @param options cookie过期事件配置
+ */
+export declare function setCookie (key: string, value: string, options: {
+  days?: number, hours?: number, minutes?: number
+}) : void
+
+/**
+ * 删除cookie
+ * @param key cookie键
+ */
+export declare function delCookie (key: string) : void
+
+/**
+ * 获取cookie
+ * @param key cookie键
+ */
+export declare function getCookie (key) : string

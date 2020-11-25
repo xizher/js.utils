@@ -1,4 +1,5 @@
-export * from './crypto/crypto'
+export * from './crypto/crypto.js'
+export * from './cookie/cookie'
 
 /**
  * 对象深拷贝
