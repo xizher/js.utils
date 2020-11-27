@@ -74,22 +74,22 @@ export declare class RegExpHelper {
    * 是否为非负整数
    * @param val 检查对象
    */
-  static '非负整数' (val: any) : boolean
+  static NON_NEGATIVE_INTEGER (val: any) : boolean
   /**
    * 是否为正整数
    * @param val 检查对象
    */
-  static '正整数' (val: any) : boolean
+  static POSITION_INTEGER (val: any) : boolean
   /**
    * 是否为email
    * @param val 检查对象
    */
-  static 'email' (val: any) : boolean
+  static EMAIL (val: any) : boolean
   /**
    * 是否为url
    * @param val 检查对象
    */
-  static 'url' (val: any) : boolean
+  static URL (val: any) : boolean
 }
 
 /**
@@ -178,3 +178,9 @@ export declare function watchGeoLocation (success: ({ lon, lat, detial }: {
   timeout?: Number
   maximumAge?: Number
 }) : { remove: () => void }
+
+/**
+ * 判断网页是否通过移动端设备打开
+ * @returns 是否通过移动端设备打开
+ */
+export declare function isFromMobileBrowser () : boolean

@@ -2,7 +2,6 @@ export * from './crypto/crypto'
 export * from './cookie/cookie'
 export * from './regular/regular'
 export * from './storage/storage'
-export * from './http/http'
 
 /**
  * 对象深拷贝
@@ -89,4 +88,10 @@ export function watchGeoLocation (success, error, options) {
       navigator.geolocation.clearWatch(watchId)
     }
   }
+}
+
+export function isFromMobileBrowser () {
+  return !!navigator
+    .userAgent
+    .match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
 }
