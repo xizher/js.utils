@@ -1,7 +1,10 @@
 # js.utils (js通用函数)
 ### 调用方式
-
+```bash
+npm install crypto-js
 ```
+
+```js
 import { ... } from '*/js.ext'
 ```
 
