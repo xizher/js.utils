@@ -1,9 +1,17 @@
 /**
- * 对象深拷贝
+ * 对象深拷贝（use JSON）
  * @param obj Javascript对象
  * @returns 深拷贝后的对象引用
  */
-export declare function deepCopy (obj: Object): Object
+export declare function deepCopyJSON (obj: Object | Array<any>): Object | Array<any>
+
+/**
+ * 对象深拷贝（递归式）
+ * @param obj Javascript对象
+ * @returns 深拷贝后的对象引用
+ */
+export declare function deepCopy (obj: Object | Array<any>): Object | Array<any>
+
 /**
  * 获取GUID字符串
  * @returns GUID字符串

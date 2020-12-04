@@ -4,12 +4,29 @@ export * from './regular/regular'
 export * from './storage/storage'
 
 /**
- * 对象深拷贝
- * @param {Object} obj Javascript对象
+ * 对象深拷贝（use JSON）
+ * @param {Object | Array} obj Javascript对象
+ * @returns {Object} 深拷贝后的对象引用
+ */
+export function deepCopyJSON (obj) {
+  return JSON.parse(JSON.stringify(obj))
+}
+
+/**
+ * 对象深拷贝（递归式）
+ * @param {Object | Array} obj Javascript对象
  * @returns {Object} 深拷贝后的对象引用
  */
 export function deepCopy (obj) {
-  return JSON.parse(JSON.stringify(obj))
+  const newObj = Array.isArray(obj) ? [] : {}
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      newObj[key] = typeof obj[key] === 'object'
+        ? deepCopy(obj[key])
+        : obj[key]
+    }
+  }
+  return newObj
 }
 
 /**
