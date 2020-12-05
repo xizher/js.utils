@@ -98,6 +98,8 @@ export declare class RegExpHelper {
    * @param val 检查对象
    */
   static URL (val: any) : boolean
+  static USERNAME (val: any) : boolean
+  static PASSWORD (val: any) : boolean
 }
 
 /**
