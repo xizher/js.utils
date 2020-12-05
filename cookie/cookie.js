@@ -16,7 +16,7 @@ export function delCookie (key) {
 
 export function getCookie (key) {
   const cookie = document.cookie.match(new RegExp(`(^| )${key}=([^;]*)(;|$)`))
-  if (console) {
+  if (cookie) {
     return unescape(cookie[2])
   } else {
     return null
