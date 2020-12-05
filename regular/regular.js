@@ -11,5 +11,11 @@ export class RegExpHelper {
   static URL (val) {
     return /^[a-zA-z]+:\/\/(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$/.test(val)
   }
+  static USERNAME (val) {
+    return /^([a-zA-Z0-9_\u4e00-\u9fa5]{2,20})$/.test(val)
+  }
+  static PASSWORD (val) {
+    return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(val)
+  }
 }
 
