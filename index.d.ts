@@ -194,3 +194,6 @@ export declare function watchGeoLocation (success: ({ lon, lat, detial }: {
  * @returns 是否通过移动端设备打开
  */
 export declare function isFromMobileBrowser () : boolean
+
+
+export declare function deepExtent () : any
