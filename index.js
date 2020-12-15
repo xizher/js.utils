@@ -169,23 +169,24 @@ export function deepExtent () {
   }
   // Return the modified object
   return target
+
+  function isPlainObject (obj) {
+    let class2type = {}
+    let getProto = Object.getPrototypeOf
+    let toString = class2type.toString
+    let hasOwn = class2type.hasOwnProperty
+    let fnToString = hasOwn.toString
+    let ObjectFunctionString = fnToString.call(Object)
+    let proto, Ctor
+    if (!obj || toString.call(obj) !== '[object Object]') {
+      return false
+    }
+    proto = getProto(obj)
+    if (!proto) {
+      return true
+    }
+    Ctor = hasOwn.call(proto, 'constructor') && proto.constructor
+    return typeof Ctor === 'function' && fnToString.call(Ctor) === ObjectFunctionString
+  }
 }
 
-export function isPlainObject (obj) {
-  let class2type = {}
-  let getProto = Object.getPrototypeOf
-  let toString = class2type.toString
-  let hasOwn = class2type.hasOwnProperty
-  let fnToString = hasOwn.toString
-  let ObjectFunctionString = fnToString.call(Object)
-  let proto, Ctor
-  if (!obj || toString.call(obj) !== '[object Object]') {
-    return false
-  }
-  proto = getProto(obj)
-  if (!proto) {
-    return true
-  }
-  Ctor = hasOwn.call(proto, 'constructor') && proto.constructor
-  return typeof Ctor === 'function' && fnToString.call(Ctor) === ObjectFunctionString
-}

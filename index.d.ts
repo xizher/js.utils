@@ -195,5 +195,10 @@ export declare function watchGeoLocation (success: ({ lon, lat, detial }: {
  */
 export declare function isFromMobileBrowser () : boolean
 
-
-export declare function deepExtent () : any
+/**
+ * 对象扩展  （ $.extent(true, objSource, objTarget) ）
+ * @param deep 是否深扩展
+ * @param objSorce 源对象
+ * @param objTarget 目标对象
+ */
+export declare function deepExtent (deep: boolean, objSource: any, objTarget: any) : any
