@@ -190,3 +190,8 @@ export function deepExtent () {
   }
 }
 
+export async function copyTxt (txt) {
+  await navigator.clipboard.writeText(txt)
+  return txt
+}
+

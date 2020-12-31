@@ -202,3 +202,9 @@ export declare function isFromMobileBrowser () : boolean
  * @param objTarget 目标对象
  */
 export declare function deepExtent (deep: boolean, objSource: any, objTarget: any) : any
+
+/**
+ * 复制文本
+ * @param txt 文本
+ */
+export declare function copyTxt (txt: string) : Promise<string>
